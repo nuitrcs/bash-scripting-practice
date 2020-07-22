@@ -31,6 +31,11 @@ else
 fi
 ```
 
+To test the code:
+```bash
+bash q1.sh ./data-shell/writing
+```
+
 **02)** Write a bash script to generate N random numbers between 0 and
 1000 and write them to a distinct file. Find out how many unique numbers
 are obtained. Repeat all this M times. N and M are input parameters for
@@ -46,6 +51,11 @@ for i in `seq $1`; do
     done
     sort -n randomnumbers_"$i".txt | uniq | wc -l
 done
+```
+
+To test the code:
+```bash
+bash q2.sh 5 500
 ```
 
 **03)** Write a bash script to search all the files in “/data-shell/writing/data”
@@ -66,6 +76,11 @@ for i in $files; do
         echo "$word" ' does not exist in ' "$i"
     fi
 done
+```
+
+To test the code:
+```bash
+bash q3.sh ./data-shell/writing/data/*
 ```
 
 **04)** Write a bash script to search all the files in “/data-shell/writing/data”
@@ -124,7 +139,11 @@ for i in ${files[*]:1}; do
             echo "$word" ' does not exist in ' "$i"
     fi
 done
+```
 
+To test the code:
+```bash
+bash q4.sh 'infinite' ./data-shell/writing/data/*
 ```
 
 **05)** Write a function to search for input strings in files in the
@@ -148,6 +167,11 @@ for i in `echo "$words"`; do
     echo 'search for' "$i" '----'
     filedit "$i"
 done
+```
+
+To test the code:
+```bash
+bash q5.sh 'infinite' 'umbrella'
 ```
 
 **06)** Write a bash which takes two arguments. The first argument can be 'folder' or 'file': 
@@ -204,3 +228,7 @@ else echo 'Please enter all or file for the first argument'
 fi
 ```
 
+To test the code:
+```bash
+bash q6 file ./data-shell/molecules/cubane.pdb
+```
