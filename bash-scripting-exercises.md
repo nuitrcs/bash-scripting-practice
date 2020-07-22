@@ -68,7 +68,7 @@ folder and let us know if the ‘infinite’ is in the file or not for each file
 files="$@"
 word='infinite'
 
-for i in $files; do
+for i in `echo "$files"`; do
     echo "$i"
     if grep -qw "$word" "$i" ; then
         echo "$word" ' exists in ' "$i"
