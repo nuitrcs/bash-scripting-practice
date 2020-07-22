@@ -150,22 +150,26 @@ for i in `echo "$words"`; do
 done
 ```
 
-**06)** Write a bash script
+**06)** Write a bash which takes two arguments. The first argument can be 'folder' or 'file': 
+- For 'folder', the second argument should be the path of a folder 
+- For 'file', the second argument should be the path of a file.
+If folder is entered, the script should operate on all files in that folder. If a file is entered, 
+the script should operate only on that file. The operation include replacing a line that has a 
+matching string and deleting the 4th line in the file(s).
+
 
 > Code
-
 ```bash
 #!/bin/bash
 
 function filedit {
 
-
     echo "processing $1"
-    # substitute a whole line
+    # substitute a whole line with a matching string
     sed -e 's/.*DAVE.*/REPLACE/' $1 > $1_version1
-    # fine and substitute matching contents
+    # delete the 4th line
     sed -e '4d' $1 > $1_version2
-    # add more contents
+    # add more contents, if required
     echo "EDITED on 07/22" >> $1_version1
     echo "EDITED on 07/22" >> $1_version2
 
@@ -176,7 +180,7 @@ function filedit {
 args=("$@")
 currentfolder=$PWD
 
-if [ "${args[0]}" == 'all' ]; then
+if [ "${args[0]}" == 'folder' ]; then
     if [ -d "${args[1]}"  ]; then
         cd ${args[1]}
         for i in `ls`; do
