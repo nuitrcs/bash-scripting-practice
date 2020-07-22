@@ -153,6 +153,7 @@ done
 **06)** Write a bash which takes two arguments. The first argument can be 'folder' or 'file': 
 - For 'folder', the second argument should be the path of a folder 
 - For 'file', the second argument should be the path of a file.
+
 If folder is entered, the script should operate on all files in that folder. If a file is entered, 
 the script should operate only on that file. The operation include replacing a line that has a 
 matching string and deleting the 4th line in the file(s).
