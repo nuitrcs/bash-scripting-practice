@@ -21,10 +21,10 @@ script should print out "<name> does not exits"
 name=$1
 
 if [ -f $name ]; then
-    nametype='File'
+    nametype='file'
     echo "$name" "$nametype" 'exists'
 elif [ -d $name ]; then
-    nametype='Folder'
+    nametype='folder'
     echo "$name" "$nametype" 'exists'
 else
     echo "$name" 'does not exist'
